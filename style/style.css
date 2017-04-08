@@ -17,10 +17,6 @@ body{background: linear-gradient(-315deg, #EDFAFF 0%, #FFFFFF 100%);}
 
 .bg-image{height: 100%;width: 32%;display: block;background: url("../images/bg-home.png") no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;-webkit-background-repeat: no-repeat;-moz-background-repeat: no-repeat;-o-background-repeat: no-repeat;background-repeat: no-repeat;background-position: center;overflow: hidden;position: relative;z-index: 2;}
 
-
-/*mobile*/
-    
-
 /*desk*/
 @media only screen and (min-width : 992px) {
     .logo{position: absolute;top: 18%;left: 76%;display: block;overflow: visible;z-index: 5;}
