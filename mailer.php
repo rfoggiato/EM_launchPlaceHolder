@@ -6,7 +6,7 @@ require 'phpmailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
 
-//$mail->SMTPDebug = 3;
+$mail->SMTPDebug = 3;
 
 $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
@@ -33,5 +33,20 @@ if(!$mail->send()) {
 } else {
     echo 'E-mail cadastrado com sucesso.';
 }
+
+/*$dbhost = "174.138.72.86";
+$dbname = "optin-emails";
+$dbusername = "root";
+$dbpassword = "ensinomed17";
+
+$link = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbusername, $dbpassword);
+$link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+//if($link){echo "sucesso"; exit();}
+
+$statement = $link->prepare("INSERT INTO emails('email')
+    VALUES(?)");
+
+$statement->execute(array($email);*/
 
 ?>
