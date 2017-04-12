@@ -27,7 +27,7 @@ body{background: linear-gradient(-315deg, #EDFAFF 0%, #FFFFFF 100%);}
 
 .text{display: block;position: absolute;max-width: 612px;color: #FFFFFF;font-family: 'Montserrat', sans-serif;font-size: 16px;line-height: 24px;top: 57%;margin-left: 22%;z-index: 3;}
 
-#mc_embed_signup_scroll input{display:block;height: 50px;width: 250px;border-radius: 25px;border: 0;text-align: center;font-family: 'Montserrat', sans-serif;font-size: 12px;line-height: 15px;}.email input::-webkit-input-placeholder {color:#d9d9d9;}.email input:-moz-placeholder {color:#d9d9d9;opacity:1;}.email input::-moz-placeholder {color:#d9d9d9;opacity:1;}.email input:-ms-input-placeholder {color:#d9d9d9;}.email input:focus{color: #595959;}
+#mc_embed_signup_scroll input, button{display:block;height: 50px;width: 250px;border-radius: 25px;border: 0;text-align: center;font-family: 'Montserrat', sans-serif;font-size: 12px;line-height: 15px;}.email input::-webkit-input-placeholder {color:#d9d9d9;}.email input:-moz-placeholder {color:#d9d9d9;opacity:1;}.email input::-moz-placeholder {color:#d9d9d9;opacity:1;}.email input:-ms-input-placeholder {color:#d9d9d9;}.email input:focus{color: #595959;}
 
 .emailform{display: block;position: absolute;top: 60%;left: calc(127px + 85px);z-index: 15;}
 
@@ -44,5 +44,7 @@ body{background: linear-gradient(-315deg, #EDFAFF 0%, #FFFFFF 100%);}
 #contato{font-family: 'Montserrat', sans-serif;font-size: 12px;line-height: 15px;position: absolute;bottom: 16%;right: 8%;}
 
 #contato a:link, :visited, :hover, :active {color: white;text-decoration: none;}
+
+.popin {display:visible !important;}
 
 /*@media only screen and (max-width : 540px) {}*/
