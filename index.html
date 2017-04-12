@@ -17,6 +17,7 @@
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="628">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -25,7 +26,7 @@
             ga('create', 'UA-97037143-1', 'auto');
             ga('send', 'pageview');
         </script>
-        <script src='https://www.google.com/recaptcha/api.js?hl=pt_BR' async defer></script>
+        <!--<script src='https://www.google.com/recaptcha/api.js?hl=pt_BR' async defer></script>-->
         <script>    
             function onSubmit(token) {
                 alert('Muito obrigado!' + document.getElementById('email').value);
@@ -45,6 +46,9 @@
         </script>
     </head>
     <body>
+        <div class="registered" id="success-registered">
+            <h2>E-mail cadastrado com sucesso!</h2>
+        </div>
         <article id="wrapper">
             <section class="over">
                 <div class="logo">
@@ -63,25 +67,85 @@
                         <p>O EnsinoMed é uma instituição de ensino online formada por um grupo de médicos e juristas com grande experiência acadêmica e prática no segmento de perícias médicas.</p><br>
                         <p>Em breve, lançaremos nossa plataforma com o curso de perícias médicas, uma proposta diferente de tudo o que existe hoje no mercado.</p>
                     </div>
-                    <div class="emailform">
-                        <form action="mailer.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> 
-                            <div id="mc_embed_signup_scroll">        
+                    
+                    <div class="form" id="form">
+                        <form onsubmit="submit();" action="javascript:void(0);" method="post" name="form" class="validate" target="_blank" novalidate> 
+                            <div id="optin">        
                                 <input type="text" name="email" class="email" id="email" placeholder="meu@email.com" required />
-                                <div id='recaptcha' class="g-recaptcha" data-sitekey="6LcybhwUAAAAAGSyB6gZzjD1tIkNIz5hRGouj5aO" data-callback="onSubmit" data-size="invisible"></div>
-                                <button class="g-recaptcha" data-sitekey="6LcybhwUAAAAAGSyB6gZzjD1tIkNIz5hRGouj5aO" data-callback="submitForm" data-badge="bottomright" type="submit" id="mc-embedded-subscribe">
-                                AVISE-ME
-                                </button>
+                                <!--div id="recaptcha" class="g-recaptcha" data-sitekey="6LcybhwUAAAAAGSyB6gZzjD1tIkNIz5hRGouj5aO" data-callback="onSubmit" data-size="invisible"></div>-->
+                                <input onclick="submit();" class="button" name="subscribe" type="button" id="submitform" value="AVISA-ME"></input>
                                 <!--<input type="submit" value="AVISE-ME" name="subscribe" id="mc-embedded-subscribe" class="button"/>-->
                             </div>
                         </form>
                         <script>onload();</script>
                         <div class="warntext"><p>Cadastre agora seu e-mail e receba informações sobre o nosso lançamento.</p></div>
                     </div>
-                    <div id="contato">
+                    <div class="contato">
                         <p><a href="mailto:contato@ensinomed.com.br?Subject=Quero%20saber%20mais%20sobre%20os%20cursos%20ensinoMed" target="_top">contato@ensinomed.com.br</a></p>
                     </div>
                 </div>
             </section>
         </article>
+        <script>
+            // self executing function here
+            (function () {
+                // your page initialization code here
+                // the DOM will be available here
+                document.getElementById("email")
+                    .addEventListener("keyup", function (event) {
+                        if (event.keyCode == 13) {
+                            event.preventDefault();
+                            submit();
+                            return false;
+                        }
+                        return true;
+                    });
+                document.getElementById('submitform').onclick = submit;
+            })();
+
+            function submit() {
+                doSubscribe(document.getElementById('email').value.trim());
+            }
+
+            function hideForm() {
+                document.getElementById("form").classList.add("hidden-form");
+            }
+
+            function showSubscriptionSuccess() {
+                hideForm();
+                var wrapper = document.getElementById("success-registered");
+                wrapper.firstElementChild.innerText = "E-mail cadastrado com sucesso!";
+                wrapper.classList.remove("registered");
+                wrapper.classList.add("success");
+            }
+
+            function showSubscriptionFailed(reason) {
+                var wrapper = document.getElementById("success-registered");
+                wrapper.firstElementChild.innerText = reason;
+                wrapper.classList.remove("registered");
+                wrapper.classList.add("failed");
+            }
+
+            function doSubscribe(email) {
+                console.log(email);
+                axios.post('http://www.ensinomed.com.br/subscribe', {
+                    email: email
+                }).then(function (response) {
+                    showSubscriptionSuccess();
+                }).catch(function (error) {
+                    if (error.response) {
+                        if (error.response.status === 403) {
+                            // Email já cadastrado
+                            hideForm();
+                        } else {
+                            console.log(error.response.data.message)
+                        }
+                        showSubscriptionFailed(error.response.data.message);
+                    } else {
+                        showSubscriptionFailed("Não foi possível acessar o servidor. Tente novamente mais tarde.");
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
