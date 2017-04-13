@@ -101,6 +101,6 @@ input {
 
 .warntext{width: 250px;margin: 0 auto;text-align: center;font-family: 'Montserrat', sans-serif;font-size: 12px;line-height: 18px;color: #FFF;}
 
-#contato{position: absolute;top: 520px;font-family: 'Montserrat', sans-serif;font-size: 12px;line-height: 18px;width: 100%;text-align: center;}
+.contato{position: absolute;top: 520px;font-family: 'Montserrat', sans-serif;font-size: 12px;line-height: 18px;width: 100%;text-align: center;}
 
-#contato a:link, :visited, :active {color: white;text-decoration: none;}
+.contato a:link, :visited, :active {color: white;text-decoration: none;}

@@ -128,7 +128,7 @@
 
             function doSubscribe(email) {
                 console.log(email);
-                axios.post('http://www.ensinomed.com.br/subscribe', {
+                axios.post('/subscribe', {
                     email: email
                 }).then(function (response) {
                     showSubscriptionSuccess();
