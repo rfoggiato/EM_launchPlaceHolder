@@ -9,87 +9,42 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 .logo img{display: block;margin: 0 auto;max-width:155px;min-width:150px;}
 
-@media only screen and (min-width : 541px) {
-    .bg{position: relative;margin:-10vh auto 0 auto;max-height: 620px;min-height: 560px;max-width: 620px;min-width: 320px;background: linear-gradient(45deg, rgba(12, 114, 144, 1) 0%, rgba(34, 170, 226, 1) 80%);display: block;z-index:0;}
-}
+@media only screen and (min-width : 541px) {.bg{position: relative;margin:-10vh auto 0 auto;max-height: 620px;min-height: 560px;max-width: 620px;min-width: 320px;background: linear-gradient(45deg, rgba(12, 114, 144, 1) 0%, rgba(34, 170, 226, 1) 80%);display: block;z-index:0;}}
 
-@media only screen and (max-width : 540px) {
-    .bg{position: relative;margin:-52vh auto 0 auto;max-height: 620px;min-height: 560px;max-width: 620px;min-width: 320px;background: linear-gradient(45deg, rgba(12, 114, 144, 1) 0%, rgba(34, 170, 226, 1) 80%);display: block;z-index:0;}
-}
+@media only screen and (max-width : 540px) {.bg{position: relative;margin:-52vh auto 0 auto;max-height: 620px;min-height: 560px;max-width: 620px;min-width: 320px;background: linear-gradient(45deg, rgba(12, 114, 144, 1) 0%, rgba(34, 170, 226, 1) 80%);display: block;z-index:0;}}
 .main{display: block;position: absolute;width: 100%;top: 0;left: 0;}
+
+@media only screen and (max-width:319px){}
 
 .bg-image{height: 900px;width: 100%;display: block;background: url("../images/bg-home.png") no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;-webkit-background-repeat: no-repeat;-moz-background-repeat: no-repeat;-o-background-repeat: no-repeat;background-repeat: no-repeat;background-position: center;overflow: hidden;position: relative;z-index: -1;}
 
 .title{position: absolute;width: 100%;z-index: 15;}
 
-@media only screen and (min-width : 541px) {
-    .mobtitle{max-width: 490px;position: relative; display: block;padding: 0 15px;margin: -30vh auto 0 auto;color: #FFF;font-family: 'Montserrat', sans-serif;font-size: 4vh;font-weight: bold;line-height: 1.3em;letter-spacing: 0.02em;}
-}
+@media only screen and (min-width : 541px) {.mobtitle{max-width: 490px;position: relative; display: block;padding: 0 15px;margin: -30vh auto 0 auto;color: #FFF;font-family: 'Montserrat', sans-serif;font-size: 4vh;font-weight: bold;line-height: 1.3em;letter-spacing: 0.02em;}}
 
-@media only screen and (max-width : 540px) {
-    .mobtitle{max-width: 280px;position: relative; display: block;margin: -65vh auto 0 auto;color: #FFF;font-family: 'Montserrat', sans-serif;font-size: 26px;font-weight: bold;line-height: 26px;}
-}
+@media only screen and (max-width : 540px) {.mobtitle{max-width: 280px;position: relative; display: block;margin: -65vh auto 0 auto;color: #FFF;font-family: 'Montserrat', sans-serif;font-size: 26px;font-weight: bold;line-height: 26px;}}
 
 .mobtitle em{font-family: 'Libre Baskerville', serif;font-weight: 400;font-style: italic;}
 
 #stripes{display: block;height: 20px;width: 60%;background-image: repeating-linear-gradient(135deg,rgba(255, 255, 255, .85) 0%, rgba(255, 255, 255, .55) 10%, transparent 15%, transparent 50%);background-size: 10px 10px;position: relative;left: 10%;bottom: 1.7vh;}
 
-@media only screen and (min-width : 541px) {
-    .text{display: block;position: absolute;max-width: 520px;color: #FFFFFF;font-family: 'Montserrat', sans-serif;font-size: 16px;line-height: 24px;top: 10vh;left: 7%;z-index: 3;}
-}
+@media only screen and (min-width : 541px) {.text{display: block;position: absolute;max-width: 520px;color: #FFFFFF;font-family: 'Montserrat', sans-serif;font-size: 16px;line-height: 24px;top: 10vh;left: 7%;z-index: 3;}}
 
-@media only screen and (max-width : 540px) {
-    .text{display: block;position: absolute;max-width: 86%;color: #FFFFFF;font-family: 'Montserrat', sans-serif;font-size: .85em;line-height: 1.3em;top: 100px;left: 7%;z-index: 3;}
-}
+@media only screen and (max-width : 540px) {.text{display: block;position: absolute;max-width: 86%;color: #FFFFFF;font-family: 'Montserrat', sans-serif;font-size: .85em;line-height: 1.3em;top: 100px;left: 7%;z-index: 3;}}
 
-input {
--webkit-appearance: none;
--moz-appearance: none;
-}
+input {-webkit-appearance: none;-moz-appearance: none;}
 
-.registered{
-    height: 0;
-    visibility: hidden;
-}
+.registered{height: 0;visibility: hidden;}
 
-.success, .failed {
-    display: block;
-    position: fixed;
-    visibility: visible;    
-    padding: 30px 20px;
-    margin-left: auto;
-    margin-right: auto;
-    top: auto;
-    left: 0;
-    right: 0;
-    bottom: 50px;
-    max-width: 290px;
-    height: auto;
-    background-color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 14px;
-    letter-spacing: 0.05em;
-    text-align: center;
-    text-decoration-style: none;
-    color: #595959;
-    z-index: 1000;
-    opacity: 1;
-    -webkit-transition:opacity 300ms ease-out 0.5s;
-    -moz-transition:opacity 300ms ease-out 0.5s;
-    transition:opacity 300ms ease-out 0.5s;
-}
+@media only screen and (max-width:317px){.success,.failed {padding:15px;max-inline-size: 280px;}}
+
+@media only screen and (min-width:318px){.success, .failed {display: block;position: fixed;visibility: visible;padding: 30px 20px;margin-left: auto;margin-right: auto;top: auto;left: 0;right: 0;bottom: 50px;max-width: 290px;height: auto;background-color: white;font-family: 'Montserrat', sans-serif;font-weight: 400;font-size: 11px;line-height: 14px;letter-spacing: 0.05em;text-align: center;text-decoration-style: none;color: #595959;z-index: 1000;opacity: 1;-webkit-transition:opacity 300ms ease-out 0.5s;-moz-transition:opacity 300ms ease-out 0.5s;transition:opacity 300ms ease-out 0.5s;}}
 
 #success-registered h2:link, :visited, :hover, :active {color:#595959;text-decoration: none;}
 
-@media only screen and (min-width : 541px) {
-    .form{position: absolute;top: 30vh;width: 100%;z-index: 4;}
-}
+@media only screen and (min-width:541px){.form{position: absolute;top: 30vh;width: 100%;z-index: 4;}}
 
-@media only screen and (max-width : 540px) {
-    .form{position: absolute;top: 300px;width: 100%;z-index: 4;}
-}
+@media only screen and (max-width:540px){.form{position: absolute;top: 300px;width: 100%;z-index: 4;}}
 
 #optin input{display:block;height: 50px;width: 250px;border-radius: 25px;border: 0;text-align: center;font-family: 'Montserrat', sans-serif;font-size: 12px;margin: 10px auto 10px auto;}#optin input::-webkit-input-placeholder {color:#d9d9d9;}#optin input:-moz-placeholder {color:#d9d9d9;opacity:1;}#optin input::-moz-placeholder {color:#d9d9d9;opacity:1;}#optin input:-ms-input-placeholder {color:#d9d9d9;}#optin input:focus{color: #595959;}
 
