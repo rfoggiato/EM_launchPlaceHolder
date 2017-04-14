@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, user-scalable=no" initial-scale=1.0/>
 	    <title>EnsinoMed - Em breve</title> 
         <link rel="icon" type="image/png" href="../static/images/favicon.png"/>
-        <link rel="stylesheet" media="only screen and (min-device-width : 992px)" href="../static/style/style.css"/>
-        <link rel="stylesheet" media="only screen and (max-device-width : 991px)" href="../static/style/m.style.css"/>
+        <link rel="stylesheet" media="only screen and (min-device-width : 992px)" href="style/style.css"/>
+        <link rel="stylesheet" media="only screen and (max-device-width : 991px)" href="style/m.style.css"/>
         <meta property="og:locale" content="pt_BR"/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="http://www.ensinomed.com.br/"/>
@@ -47,12 +47,19 @@
     </head>
     <body>
         <div class="registered" id="success-registered">
-            <h2>E-mail cadastrado com sucesso!</h2>
+            <h2>E-mail cadastrado com sucesso!</h2><br>
+            <button id="close-button" class="close-warning">FECHAR</button>
         </div>
+        <!--<article id="modal">
+            <section>
+                <div id="overlay"></div>
+                <div id="video"></div>
+            </section>
+        </article>-->
         <article id="wrapper">
             <section class="over">
                 <div class="logo">
-                    <img src="../static/images/ensinoMed_logo.png" alt="logomarca da EnsinoMed"\>
+                    <img src="images/ensinoMed_logo.png" alt="logomarca da EnsinoMed"\>
                 </div>
                 <div class="bg-image"></div>
                 <div class="title">
@@ -67,7 +74,6 @@
                         <p>O EnsinoMed é uma instituição de ensino online formada por um grupo de médicos e juristas com grande experiência acadêmica e prática no segmento de perícias médicas.</p><br>
                         <p>Em breve, lançaremos nossa plataforma com o curso de perícias médicas, uma proposta diferente de tudo o que existe hoje no mercado.</p>
                     </div>
-                    
                     <div class="form" id="form">
                         <form onsubmit="submit();" action="javascript:void(0);" method="post" name="form" class="validate" target="_blank" novalidate> 
                             <div id="optin">        
@@ -111,7 +117,7 @@
                 document.getElementById("form").classList.add("hidden-form");
             }
 
-            function showSubscriptionSuccess() {
+            /*function showSubscriptionSuccess() {
                 hideForm();
                 var wrapper = document.getElementById("success-registered");
                 wrapper.firstElementChild.innerText = "E-mail cadastrado com sucesso!";
@@ -124,6 +130,19 @@
                 wrapper.firstElementChild.innerText = reason;
                 wrapper.classList.remove("registered");
                 wrapper.classList.add("failed");
+            }*/
+
+            function showSubscriptionSuccess() {
+                hideForm();
+                var wrapper = document.getElementById("success-registered");
+                wrapper.firstElementChild.innerText = "E-mail cadastrado com sucesso!";
+                wrapper.classList.add("modal");
+            }
+
+            function showSubscriptionFailed(reason) {
+                var wrapper = document.getElementById("success-registered");
+                wrapper.firstElementChild.innerText = reason;
+                wrapper.classList.add("modal");
             }
 
             function doSubscribe(email) {
@@ -146,6 +165,13 @@
                     }
                 });
             }
+            /*start-modal*/
+            var btn = document.getElementById("close-button");
+            var wrapper = document.getElementById("success-registered");
+            btn.onclick = function() {
+                    wrapper.classList.remove("modal");
+                }
+            /*end-modal*/
         </script>
     </body>
 </html>

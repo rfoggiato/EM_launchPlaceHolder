@@ -24,7 +24,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     .logo img{display: block;height: 150px;float: right;}
 }
 
-@media only screen and (max-width:991px;){
+@media only screen and (max-width:991px){
     .main{display: block;position: absolute;width: 100%;top: 0;left: 0;}
 }
 
@@ -89,41 +89,13 @@ input {
 -moz-appearance: none;
 }
 
-.registered{
-    height: 0;
-    visibility: hidden;
-}
+.registered{opacity:0;-webkit-transition:opacity 300ms ease-out;-moz-transition:opacity 300ms ease-out;transition:opacity 300ms ease-out 0.5s;}
 
-.success, .failed {
-    display: block;
-    position: fixed;
-    visibility: visible;    
-    padding: 30px 20px;
-    margin-left: auto;
-    margin-right: auto;
-    top: auto;
-    left: 0;
-    right: 0;
-    bottom: 50px;
-    max-width: 290px;
-    height: auto;
-    background-color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 14px;
-    letter-spacing: 0.05em;
-    text-align: center;
-    text-decoration-style: none;
-    color: #595959;
-    z-index: 1000;
-    opacity: 1;
-    -webkit-transition:opacity 300ms ease-out 0.5s;
-    -moz-transition:opacity 300ms ease-out 0.5s;
-    transition:opacity 300ms ease-out 0.5s;
-}
+.registered{display: block;position: fixed;padding: 30px 20px;margin-left: auto;margin-right: auto;top: auto;left: 0;right: 0;bottom: 50px;max-width: 290px;background-color: white;font-family: 'Montserrat', sans-serif;font-weight: 400;font-size: 11px;line-height: 14px;letter-spacing: 0.05em;text-align: center;text-decoration-style: none;color: #595959;z-index: -10}
 
-#success-registered, .success, .failed h2 {color:#595959;text-decoration: none;}
+.modal {opacity:1;z-index: 1000;}
+
+#success-registered h2 {color:#595959;text-decoration: none;}
 
 @media only screen and (max-width:991px){
     .form{position: absolute;top: 300px;width: 100%;z-index: 4;}
@@ -166,3 +138,7 @@ input {
 }
 
 p:hover,{color:white;}
+
+.close-warning {position: relative;padding: 5px 8px;display:block;font-size: 12px;font-weight:bold;line-height:16px;color:#595959;background: none;border: none;border-radius: 5px;margin: 0 auto;transition: color 300ms ease;}
+
+.close-warning:hover {color:#c56a71;}

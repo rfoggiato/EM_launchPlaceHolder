@@ -9,20 +9,24 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 .logo img{display: block;margin: 0 auto;max-width:155px;min-width:150px;}
 
-@media only screen and (min-width : 541px) {.bg{position: relative;margin:-10vh auto 0 auto;max-height: 620px;min-height: 560px;max-width: 620px;min-width: 320px;background: linear-gradient(45deg, rgba(12, 114, 144, 1) 0%, rgba(34, 170, 226, 1) 80%);display: block;z-index:0;}}
+@media only screen and (min-width:541px) {.bg{position: relative;margin:-10vh auto 0 auto;max-height: 620px;min-height: 560px;max-width: 620px;min-width: 320px;background: linear-gradient(45deg, rgba(12, 114, 144, 1) 0%, rgba(34, 170, 226, 1) 80%);display: block;z-index:0;}}
 
-@media only screen and (max-width : 540px) {.bg{position: relative;margin:-52vh auto 0 auto;max-height: 620px;min-height: 560px;max-width: 620px;min-width: 320px;background: linear-gradient(45deg, rgba(12, 114, 144, 1) 0%, rgba(34, 170, 226, 1) 80%);display: block;z-index:0;}}
-.main{display: block;position: absolute;width: 100%;top: 0;left: 0;}
+@media only screen and (max-width:540px) {.bg{position: relative;margin:-52vh auto 0 auto;max-height: 620px;min-height: 560px;max-width: 620px;min-width: 320px;background: linear-gradient(45deg, rgba(12, 114, 144, 1) 0%, rgba(34, 170, 226, 1) 80%);display: block;z-index:0;}}
 
-@media only screen and (max-width:319px){}
+@media only screen and (max-width:320px){.bg{position: relative;bottom:0;}}
 
 .bg-image{height: 900px;width: 100%;display: block;background: url("../images/bg-home.png") no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;-webkit-background-repeat: no-repeat;-moz-background-repeat: no-repeat;-o-background-repeat: no-repeat;background-repeat: no-repeat;background-position: center;overflow: hidden;position: relative;z-index: -1;}
 
+@media only screen and (max-width:320px){.bg-image{height:900px;}}
+
 .title{position: absolute;width: 100%;z-index: 15;}
+
 
 @media only screen and (min-width : 541px) {.mobtitle{max-width: 490px;position: relative; display: block;padding: 0 15px;margin: -30vh auto 0 auto;color: #FFF;font-family: 'Montserrat', sans-serif;font-size: 4vh;font-weight: bold;line-height: 1.3em;letter-spacing: 0.02em;}}
 
 @media only screen and (max-width : 540px) {.mobtitle{max-width: 280px;position: relative; display: block;margin: -65vh auto 0 auto;color: #FFF;font-family: 'Montserrat', sans-serif;font-size: 26px;font-weight: bold;line-height: 26px;}}
+
+@media only screen and (max-width:320px){.mobtitle{margin: -55vh auto 0 auto;}}
 
 .mobtitle em{font-family: 'Libre Baskerville', serif;font-weight: 400;font-style: italic;}
 
@@ -34,19 +38,33 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 input {-webkit-appearance: none;-moz-appearance: none;}
 
-.registered{height: 0;visibility: hidden;}
+.registered{opacity:0;-webkit-transition:opacity 300ms ease-out;-moz-transition:opacity 300ms ease-out;transition:opacity 300ms ease-out 0.5s;}
 
-@media only screen and (max-width:317px){.success,.failed {padding:15px;max-inline-size: 280px;}}
+.registered{display: block;position: fixed;padding: 30px 20px;margin-left: auto;margin-right: auto;top: auto;left: 0;right: 0;bottom: 50px;background-color: white;font-family: 'Montserrat', sans-serif;font-weight: 400;font-size: 11px;line-height: 14px;letter-spacing: 0.05em;text-align: center;text-decoration-style: none;color: #595959;z-index: -10;}
 
-@media only screen and (min-width:318px){.success, .failed {display: block;position: fixed;visibility: visible;padding: 30px 20px;margin-left: auto;margin-right: auto;top: auto;left: 0;right: 0;bottom: 50px;max-width: 290px;height: auto;background-color: white;font-family: 'Montserrat', sans-serif;font-weight: 400;font-size: 11px;line-height: 14px;letter-spacing: 0.05em;text-align: center;text-decoration-style: none;color: #595959;z-index: 1000;opacity: 1;-webkit-transition:opacity 300ms ease-out 0.5s;-moz-transition:opacity 300ms ease-out 0.5s;transition:opacity 300ms ease-out 0.5s;}}
+@media only screen and (max-width:319px){.registered {padding:15px;max-width: 280px;}}
 
-#success-registered h2:link, :visited, :hover, :active {color:#595959;text-decoration: none;}
+@media only screen and (min-width:320px){.registered {padding:30px 20px;max-width: 290px;}}
+
+.modal {opacity:1;z-index: 1000;}
+
+#success-registered h2 {color:#595959;text-decoration: none;}
 
 @media only screen and (min-width:541px){.form{position: absolute;top: 30vh;width: 100%;z-index: 4;}}
 
 @media only screen and (max-width:540px){.form{position: absolute;top: 300px;width: 100%;z-index: 4;}}
 
-#optin input{display:block;height: 50px;width: 250px;border-radius: 25px;border: 0;text-align: center;font-family: 'Montserrat', sans-serif;font-size: 12px;margin: 10px auto 10px auto;}#optin input::-webkit-input-placeholder {color:#d9d9d9;}#optin input:-moz-placeholder {color:#d9d9d9;opacity:1;}#optin input::-moz-placeholder {color:#d9d9d9;opacity:1;}#optin input:-ms-input-placeholder {color:#d9d9d9;}#optin input:focus{color: #595959;}
+#optin input{display:block;height: 50px;width: 250px;border-radius: 25px;border: 0;text-align: center;font-family: 'Montserrat', sans-serif;font-size: 12px;margin: 10px auto 10px auto;}
+
+#optin input::-webkit-input-placeholder {color:#d9d9d9;}
+
+#optin input:-moz-placeholder {color:#d9d9d9;opacity:1;}
+
+#optin input::-moz-placeholder {color:#d9d9d9;opacity:1;}
+
+#optin input:-ms-input-placeholder {color:#d9d9d9;}
+
+#optin input:focus{color: #595959;}
 
 #email:after{content: '';display: block;clear: both;}
 
@@ -58,4 +76,8 @@ input {-webkit-appearance: none;-moz-appearance: none;}
 
 .contato{position: absolute;top: 520px;font-family: 'Montserrat', sans-serif;font-size: 12px;line-height: 18px;width: 100%;text-align: center;}
 
-.contato a:link, :visited, :active {color: white;text-decoration: none;}
+.contato a:link, :visited, :active {color:white;text-decoration:none;}
+
+.close-warning {position: relative;padding: 5px 8px;display:block;font-size: 12px;font-weight:bold;line-height:16px;color:#595959;background: none;border: none;border-radius: 5px;margin: 0 auto;transition: color 300ms ease;}
+
+.close-warning:hover {color:#c56a71;}
