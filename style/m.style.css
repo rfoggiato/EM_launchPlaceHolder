@@ -22,11 +22,11 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 .title{position: absolute;width: 100%;z-index: 15;}
 
 
-@media only screen and (min-width : 541px) {.mobtitle{max-width: 490px;position: relative; display: block;padding: 0 15px;margin: -30vh auto 0 auto;color: #FFF;font-family: 'Montserrat', sans-serif;font-size: 4vh;font-weight: bold;line-height: 1.3em;letter-spacing: 0.02em;}}
+@media only screen and (min-width : 541px) and (orientation:portrait){.mobtitle{max-width: 490px;position: relative; display: block;padding: 0 15px;margin: -30vh auto 0 auto;color: #FFF;font-family: 'Montserrat', sans-serif;font-size: 4vh;font-weight: bold;line-height: 1.3em;letter-spacing: 0.02em;}}
 
 @media only screen and (max-width : 540px) {.mobtitle{max-width: 280px;position: relative; display: block;margin: -65vh auto 0 auto;color: #FFF;font-family: 'Montserrat', sans-serif;font-size: 26px;font-weight: bold;line-height: 26px;}}
 
-@media only screen and (max-width:320px){.mobtitle{margin: -55vh auto 0 auto;}}
+@media only screen and (max-width:320px){.mobtitle{margin: -65vh auto 0 auto;}}
 
 .mobtitle em{font-family: 'Libre Baskerville', serif;font-weight: 400;font-style: italic;}
 
