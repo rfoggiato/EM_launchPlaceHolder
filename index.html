@@ -50,12 +50,15 @@
             <h2>E-mail cadastrado com sucesso!</h2><br>
             <button id="close-button" class="close-warning">FECHAR</button>
         </div>
-        <!--<article id="modal">
-            <section>
-                <div id="overlay"></div>
-                <div id="video"></div>
-            </section>
-        </article>-->
+        <!--<div class="iframe-video" id="iframeVideo">
+            <div class="iframe-background"></div>
+            <div class="iframe-card">
+                <div class="iframe-wrapper">
+                    <button id="iframe-close-btn" title="Close (Esc)" type="button">x</button>
+                    <iframe src="https://www.youtube.com/embed/ONDVHy4QeBY?ecver=2" width="640" height="360"></iframe>
+                </div>
+            </div>
+        </div>-->
         <article id="wrapper">
             <section class="over">
                 <div class="logo">
@@ -78,9 +81,7 @@
                         <form onsubmit="submit();" action="javascript:void(0);" method="post" name="form" class="validate" target="_blank" novalidate> 
                             <div id="optin">        
                                 <input type="text" name="email" class="email" id="email" placeholder="meu@email.com" required />
-                                <!--div id="recaptcha" class="g-recaptcha" data-sitekey="6LcybhwUAAAAAGSyB6gZzjD1tIkNIz5hRGouj5aO" data-callback="onSubmit" data-size="invisible"></div>-->
                                 <input onclick="submit();" class="button" name="subscribe" type="button" id="submitform" value="AVISE-ME"></input>
-                                <!--<input type="submit" value="AVISE-ME" name="subscribe" id="mc-embedded-subscribe" class="button"/>-->
                             </div>
                         </form>
                         <script>onload();</script>
@@ -93,10 +94,7 @@
             </section>
         </article>
         <script>
-            // self executing function here
             (function () {
-                // your page initialization code here
-                // the DOM will be available here
                 document.getElementById("email")
                     .addEventListener("keyup", function (event) {
                         if (event.keyCode == 13) {
@@ -108,43 +106,23 @@
                     });
                 document.getElementById('submitform').onclick = submit;
             })();
-
             function submit() {
                 doSubscribe(document.getElementById('email').value.trim());
             }
-
             function hideForm() {
                 document.getElementById("form").classList.add("hidden-form");
             }
-
-            /*function showSubscriptionSuccess() {
-                hideForm();
-                var wrapper = document.getElementById("success-registered");
-                wrapper.firstElementChild.innerText = "E-mail cadastrado com sucesso!";
-                wrapper.classList.remove("registered");
-                wrapper.classList.add("success");
-            }
-
-            function showSubscriptionFailed(reason) {
-                var wrapper = document.getElementById("success-registered");
-                wrapper.firstElementChild.innerText = reason;
-                wrapper.classList.remove("registered");
-                wrapper.classList.add("failed");
-            }*/
-
             function showSubscriptionSuccess() {
                 hideForm();
                 var wrapper = document.getElementById("success-registered");
                 wrapper.firstElementChild.innerText = "E-mail cadastrado com sucesso!";
                 wrapper.classList.add("modal");
             }
-
             function showSubscriptionFailed(reason) {
                 var wrapper = document.getElementById("success-registered");
                 wrapper.firstElementChild.innerText = reason;
                 wrapper.classList.add("modal");
             }
-
             function doSubscribe(email) {
                 console.log(email);
                 axios.post('/subscribe', {
@@ -154,7 +132,6 @@
                 }).catch(function (error) {
                     if (error.response) {
                         if (error.response.status === 403) {
-                            // Email já cadastrado
                             hideForm();
                         } else {
                             console.log(error.response.data.message)
@@ -165,13 +142,11 @@
                     }
                 });
             }
-            /*start-modal*/
             var btn = document.getElementById("close-button");
             var wrapper = document.getElementById("success-registered");
             btn.onclick = function() {
                     wrapper.classList.remove("modal");
                 }
-            /*end-modal*/
         </script>
     </body>
 </html>

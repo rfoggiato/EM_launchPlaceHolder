@@ -5,12 +5,26 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /*styles*/
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400i|Montserrat:400,700');
 
+/*.iframe-video{position: absolute;top: 0;left: 0;width: 100%;height: 100vh;padding: 0;margin: 0;z-index: 1100;}
+
+.iframe-background{display: block;width: 100%;height: 100%;background-color: black;opacity: 0.8;padding: 0;margin: 0;}
+
+.iframe-card{position: absolute;top: 0;left: 0;text-align: center;padding: 25% 25%;}
+
+.iframe-wrapper {position: relative;}
+
+.iframe-wrapper button {}
+
+.iframe-wrapper button:after {float: right;clear: both;}
+
+.iframe-wrapper iframe {display: block;background-color: white;margin: 0 auto;}*/
+
 @media only screen and (min-width:992px){
     html, body{height: 100%;width: 100%;padding: 0;}
 
-    body{background: linear-gradient(-315deg, #EDFAFF 0%, #FFFFFF 100%);}
+    #wrapper{background: linear-gradient(-315deg, #EDFAFF 0%, #FFFFFF 100%);}
 
-    #wrapper, #full-background{height: 100%;width: 100%;padding: 0;}
+    #wrapper, #full-background{position: relative;height: 100%;width: 100%;padding: 0;}
 
     .over{position: absolute;height: 100%;width: 100%;top: 0;left: 0;padding: 8%;}
 }
@@ -58,7 +72,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     #stripes {bottom:1.7vh;}
 }
 
-#stripes{display: block;height: 40px;width: 60%;background-image: repeating-linear-gradient(135deg,rgba(255, 255, 255, .85) 0%, rgba(255, 255, 255, .55) 10%, transparent 15%, transparent 50%);background-size: 10px 10px;position: relative;left: 10%;bottom: 2.5vh;}
+#stripes{display: block;height: 40px;width: 60%;background-image: repeating-linear-gradient(135deg,rgba(255, 255, 255, .55) 0%, rgba(255, 255, 255, .25) 15%, transparent 15%, transparent 50%);background-size: 6px 6px;
+/*(135deg,rgba(255, 255, 255, .85) 0%, rgba(255, 255, 255, .55) 10%, transparent 15%, transparent 50%);background-size: 6px 6px;*/position: relative;left: 10%;bottom: 2.5vh;}
 
 @media only screen and (max-width : 540px) {
     .bg{position: relative;margin:-52vh auto 0 auto;max-height: 620px;min-height: 560px;max-width: 620px;min-width: 320px;background: linear-gradient(45deg, rgba(12, 114, 144, 1) 0%, rgba(34, 170, 226, 1) 80%);display: block;z-index:0;}
